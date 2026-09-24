@@ -53,7 +53,7 @@ The network consists of:
 - **3 Switches (S0, S1, S2)** connected to router FastEthernet interfaces (`fa2/0`)
 - **6 End PCs (PC0 – PC5)** assigned across the three subnets
 
-![Practical 15 Topology](images/p15_topology.png)
+![Practical 15 Topology](p15_topology.png)
 *Figure 15.1: Practical 15 Complete Network Topology*
 
 ---
@@ -111,7 +111,7 @@ exit
 write memory
 ```
 
-![R0 Interface Brief](images/p15_r0_config.png)  
+![R0 Interface Brief](p15_r0_config.png)  
 *Figure 15.2: R0 Interface Status (show ip interface brief)*
 
 ---
@@ -147,7 +147,7 @@ exit
 write memory
 ```
 
-![R1 Interface Brief](images/p15_r1_config.png)  
+![R1 Interface Brief](p15_r1_config.png)  
 *Figure 15.3: R1 Interface Status (show ip interface brief)*
 
 ---
@@ -177,7 +177,7 @@ exit
 write memory
 ```
 
-![R2 Interface Brief](images/p15_r2_config.png)  
+![R2 Interface Brief](p15_r2_config.png)  
 *Figure 15.4: R2 Interface Status (show ip interface brief)*
 
 ---
@@ -187,13 +187,13 @@ write memory
 ### Routing Table on R0 (`show ip route`)
 The routing table displays variable subnetting (5 subnets, 2 masks: `/26` and `/30`) learned dynamically via RIPv2 (`R`):
 
-![R0 Routing Table](images/p15_r0_route.png)  
+![R0 Routing Table](p15_r0_route.png)  
 *Figure 15.5: R0 Routing Table verifying VLSM routes*
 
 ### End-to-End Connectivity Ping Test
 Ping from PC0 (`192.168.20.10`) to PC4 (`192.168.20.140`):
 
-![Ping Test Practical 15](images/p15_ping.png)  
+![Ping Test Practical 15](p15_ping.png)  
 *Figure 15.6: Successful Ping Verification across VLSM subnets*
 
 ## 7. Packet Tracer File
@@ -225,7 +225,7 @@ The topology includes:
 - Point-to-point Serial eBGP connection (`se0/0` on R0 ↔ `se0/0` on R1)
 - LAN networks behind switches **S0** and **S1** with 4 PCs
 
-![Practical 16 Topology](images/p16_topology.png)  
+![Practical 16 Topology](p16_topology.png)  
 *Figure 16.1: BGP Inter-AS Topology (AS 100 ↔ AS 200)*
 
 ---
@@ -276,7 +276,7 @@ exit
 write memory
 ```
 
-![R0 BGP Interface Brief](images/p16_r0_config.png)  
+![R0 BGP Interface Brief](p16_r0_config.png)  
 *Figure 16.2: R0 Interface Brief*
 
 ---
@@ -305,7 +305,7 @@ exit
 write memory
 ```
 
-![R1 BGP Interface Brief](images/p16_r1_config.png)  
+![R1 BGP Interface Brief](p16_r1_config.png)  
 *Figure 16.3: R1 Interface Brief*
 
 ---
@@ -316,12 +316,12 @@ write memory
 
 - **R0 Neighbor Summary (AS 100)**: Neighbor `203.0.113.2` is established in remote AS 200.
 
-![R0 BGP Summary](images/p16_r0_bgp_summary.png)  
+![R0 BGP Summary](p16_r0_bgp_summary.png)  
 *Figure 16.4: R0 BGP Neighbor Summary*
 
 - **R1 Neighbor Summary (AS 200)**: Neighbor `203.0.113.1` is established in remote AS 100.
 
-![R1 BGP Summary](images/p16_r1_bgp_summary.png)  
+![R1 BGP Summary](p16_r1_bgp_summary.png)  
 *Figure 16.5: R1 BGP Neighbor Summary*
 
 ---
@@ -329,7 +329,7 @@ write memory
 ### 6.2 BGP Table on R0 (`show ip bgp`)
 The BGP table displays both local prefix `172.16.1.0/24` and external AS prefix `172.16.2.0/24` with AS path `200 i`:
 
-![R0 BGP Table](images/p16_r0_bgp_table.png)  
+![R0 BGP Table](p16_r0_bgp_table.png)  
 *Figure 16.6: R0 BGP Routing Table*
 
 ---
@@ -337,7 +337,7 @@ The BGP table displays both local prefix `172.16.1.0/24` and external AS prefix 
 ### 6.3 Connectivity Verification (Cross-AS Ping Test)
 Ping from **PC2 (AS 200 - `172.16.2.10`)** to **PC0 (AS 100 - `172.16.1.10`)**:
 
-![BGP Ping Test](images/p16_ping.png)  
+![BGP Ping Test](p16_ping.png)  
 *Figure 16.7: Successful Ping Verification across AS 100 and AS 200*
 
 ## 7. Packet Tracer File
